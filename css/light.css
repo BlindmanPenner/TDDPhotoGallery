@@ -1,0 +1,94 @@
+h1 {
+	color: white;
+	text-align: center
+}
+
+ul {
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+	display: block;
+	max-width: 900px;
+	text-align: center;
+}
+
+ul li img {
+	display: block;
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+#imageGallery li {
+	display: inline-block;
+	padding: 8px;
+	background: white;
+}
+
+#imageGallery a {
+	max-width: 90%;
+}
+
+#overlay {
+  background: rgba(0,0,0,0.7);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  text-align: center;
+}
+
+#overlay img {
+  margin-top: 5%;
+}
+
+#overlay p {
+  color: white;
+}
+
+img {
+	max-width: 100%;
+	max-height: 75%;
+}
+
+#prevArrow,
+#nextArrow {
+  display: block;
+  position: fixed;
+  top: 40vh;
+  margin: 0;
+}
+
+#prevArrow:hover,
+#nextArrow:hover {
+  cursor: crosshair;
+}
+
+#prevArrow {
+  left: 0;
+  margin-left: 15rem;
+}
+
+#nextArrow {
+  right: 0;
+  margin-right: 15rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
