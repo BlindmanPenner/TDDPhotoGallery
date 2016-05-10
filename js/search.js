@@ -25,7 +25,7 @@ SEARCH FILTER
         index = img.text.indexOf(query);  // Find if query text is in there
       }
 
-      img.element.style.display = index === -1 ? 'none' : '';  // Show / hide
+      $(img.element).closest('li')[0].style.display = index === -1 ? 'none' : ''; 
     });
   }
 

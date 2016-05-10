@@ -6,7 +6,7 @@ var $image = $("<img>");
 var $caption = $("<p></p>");
 var $prevArrow = $('<div id="prevArrow"><img src="img/prev.png" alt="previous" /></div>');
 var $nextArrow = $('<div id="nextArrow"><img src="img/next.png" alt="next" /></div>');
-
+var $exit = $('<div id="exit"><img src="img/exit.svg" alt="exit" /></div>');
 
 // An image to overlay
 $overlay.append($image);
@@ -17,6 +17,7 @@ $overlay.append($caption);
 //Append buttons to overlay
 $overlay.append($prevArrow);
 $overlay.append($nextArrow);
+$overlay.append($exit);
 
 // Add overlay
 $("body").append($overlay);
@@ -33,7 +34,7 @@ $("#imageGallery a").click(function(event) {
   $overlay.show();
 
     // Get child's title attribute and set caption
-  var captionText = $(this).children("img").attr("data-title");
+  var captionText = $(this).children("img").attr("alt");
   $caption.text(captionText);
 });
   
@@ -74,6 +75,18 @@ $("body").keydown(function(event){
 });
 
 
+ // When the exit button is clicked
+$exit.on("click", function(event){
+    exit();
+});
+ // When exit button is pressed
+$("body").keydown(function(event){
+    if ( event.which == 27 ) {
+        exit();
+  }
+});
+
+
 function updateImage(imageLocation, imageCaption) {
    // update image source 
   $image.attr("src", imageLocation);
@@ -96,7 +109,7 @@ function nextImage() {
 
    // get new image location and caption 
   var imageLocation = $(nextImage).attr("href");
-  var imageCaption =  $(nextImage).children("img").attr("data-title");
+  var imageCaption =  $(nextImage).children("img").attr("alt");
 
    // update the overlay image 
   updateImage(imageLocation, imageCaption);
@@ -116,10 +129,12 @@ function previousImage() {
 
   // update the image location and caption 
   var imageLocation = $(prevImage).attr("href");
-  var imageCaption =  $(prevImage).children("img").attr("data-title");
+  var imageCaption =  $(prevImage).children("img").attr("alt");
 
   // update the overlay 
   updateImage(imageLocation, imageCaption);
 }
 
-
+function exit() {
+  $($overlay).hide();
+}

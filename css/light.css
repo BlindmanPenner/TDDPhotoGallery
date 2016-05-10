@@ -63,8 +63,23 @@ img {
   margin: 0;
 }
 
+#exit {
+  display: block;
+  position: fixed;
+  font-size: 20%;
+  top: 1vh;
+  right: 0;
+  margin-right: 15rem;
+}
+
+#exit img {
+  height: 40px;
+  width: 40px;
+}
+
 #prevArrow:hover,
-#nextArrow:hover {
+#nextArrow:hover,
+#exit {
   cursor: crosshair;
 }
 
